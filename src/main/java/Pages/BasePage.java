@@ -41,8 +41,4 @@ public class BasePage {
         element = webDriver.findElement(By.xpath(xpath));
         return element;
     }
-
-    protected String getCurrentPageURL(){
-        return webDriver.getCurrentUrl();
-    }
 }
