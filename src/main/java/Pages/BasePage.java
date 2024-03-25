@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BasePage {
+
     protected static WebDriver webDriver;
     protected static WebDriverWait wait;
 
@@ -19,8 +20,9 @@ public class BasePage {
         findElementByXpath(xpath).click();
     }
 
-    protected void sendTextToElementByXpath (String xpath, String text) {
-        findElementByXpath(xpath).sendKeys();
+    protected void sendTextToElementByXpath(String xpath, String text) {
+        WebElement element = findElementByXpath(xpath);
+        element.sendKeys(text);
     }
 
     protected boolean elementExists (String xpath) {
