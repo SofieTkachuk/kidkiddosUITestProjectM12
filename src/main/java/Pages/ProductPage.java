@@ -5,7 +5,6 @@ public class ProductPage extends BasePage{
     public static final String FORMAT_OPTION = "//*[@class='single-option-selector single-option-selector-product-template product-form__input']";
     public static final String HARDCOVER_FORMAT = "//option[@value='Hardcover']";
     public static final String QUANTITY = "//input[@type='number']";
-    public static String QUANTITY_NUM = "5";
     public static final String PRODUCT_PAGE_URL = "https://kidkiddos.com/collections/english-only/products/i-love-to-bedtime-collection-english-only";
 
     public boolean isProductPageLoaded(){
@@ -27,8 +26,8 @@ public class ProductPage extends BasePage{
         clickElementByXpath(HARDCOVER_FORMAT);
     }
 
-    public void setQuantityNum(){
+    public void setQuantityNum(int quantityNum){
         findElementByXpath(QUANTITY).clear();
-        sendTextToElementByXpath(QUANTITY, QUANTITY_NUM);
+        sendTextToElementByXpath(QUANTITY, String.valueOf(quantityNum));
     }
 }
